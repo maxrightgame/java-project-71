@@ -4,7 +4,7 @@ plugins {
 }
 
 application {
-    mainClass = 'org.gradle.sample.Main'
+    mainClass = 'hexlet.code.App'
 }
 
 group = 'hexlet.code'
@@ -17,6 +17,7 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'info.picocli:picocli:4.7.6'
 }
 
 test {
