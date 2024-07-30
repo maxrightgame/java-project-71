@@ -18,13 +18,13 @@ public class App implements Callable<Integer> {
                         paramLabel = "filePathFirst",
                         description = "path to first file"
     )
-    private String filePathFirst;
+    private String filePath1;
     @CommandLine.Parameters(
                         index = "1",
                         paramLabel = "filePathSecond",
                         description = "path to second file"
     )
-    private String filePathSecond;
+    private String filePath2;
     @CommandLine.Option(
                         names = {"-h", "--help"},
                         usageHelp = true,
@@ -46,6 +46,14 @@ public class App implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
+        try {
+            String difference = Differ.generate(filePath1, filePath2);
+            System.out.println(difference);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println(e.getMessage());
+            return 1;
+        }
         return 0;
     }
 

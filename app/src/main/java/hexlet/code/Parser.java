@@ -8,6 +8,6 @@ import java.util.Map;
 public class Parser {
     public static Map<String, Object> parse (String data) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.convertValue(mapper.readTree(data), new TypeReference<>() {});
+        return mapper.readValue(data, new TypeReference<>() {});
     }
 }
