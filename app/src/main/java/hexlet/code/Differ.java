@@ -1,7 +1,5 @@
 package hexlet.code;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,8 +13,7 @@ public class Differ {
         var file1Parsed = Parser.parse(file1);
         var file2Parsed = Parser.parse(file2);
         var comparison = generateDifferenceList(file1Parsed, file2Parsed);
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.writeValueAsString(comparison);
+        return Formatter.buildResult(comparison);
     }
 
     public static List<Map<String, Object>> generateDifferenceList (Map<String, Object> data1,
