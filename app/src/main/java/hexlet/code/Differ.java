@@ -16,7 +16,7 @@ public class Differ {
         return Formatter.buildResult(comparison);
     }
 
-    public static List<Map<String, Object>> generateDifferenceList (Map<String, Object> data1,
+    public static List<Map<String, Object>> generateDifferenceList(Map<String, Object> data1,
                                                                     Map<String, Object> data2) {
         TreeMap<String, Object> mixData = new TreeMap<>();
         mixData.putAll(data1);
@@ -29,8 +29,7 @@ public class Differ {
                 if (data1.get(key).equals(data2.get(key))) {
                     node.put("status", "not changed");
                     node.put("value1", data1.get(key));
-                }
-                else {
+                } else {
                     node.put("status", "changed");
                     node.put("value1", data1.get(key));
                     node.put("value2", data2.get(key));

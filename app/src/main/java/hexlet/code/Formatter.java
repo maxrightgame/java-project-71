@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Formatter {
-    public static String buildResult (List<Map<String, Object>> inputList) {
+    public static String buildResult(List<Map<String, Object>> inputList) {
         StringBuilder result = new StringBuilder("{\n");
         for (Map<String, Object> map : inputList) {
             if (map.containsValue("not changed")) {
