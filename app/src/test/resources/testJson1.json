@@ -5,7 +5,6 @@
   "email": "johndoe@example.com",
   "isActive": true,
   "address": {
-    "street": "123 Main St",
     "city": "Anytown",
     "state": "CA",
     "zipcode": "12345"
